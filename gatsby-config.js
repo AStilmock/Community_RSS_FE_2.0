@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Community_RSS_FE_2.0`,
+    title: `Community RSS FE`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
