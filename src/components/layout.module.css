@@ -18,3 +18,11 @@
 .nav-link-text {
   color: rgb(13, 153, 13);
 }
+
+.site-title {
+  font-family: monospace;
+  font-size: 1rem;
+  color: orangered;
+  font-weight: 450;
+  margin: auto;
+}
