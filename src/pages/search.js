@@ -1,15 +1,34 @@
 import * as React from 'react'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
+import { graphql } from 'gatsby'
+import Layout from '/src/components/layout'
+import Seo from '/src/components/seo'
 
-const SearchPage = () => {
+const SearchPage = ({ data }) => {
   return (
-    <Layout pageTitle="Search for a community by zip code on this page.">
-      <p>Search box will go here</p>
+    <Layout pageTitle="Community Search Page">
+      <ul>
+      {
+        data.allFile.nodes.map(node => (
+          <li key={node.name}>
+            {node.name}
+          </li>
+        ))
+      }
+      </ul>
     </Layout>
   )
 }
 
-export const Head = () => <Seo title="My Blog Posts" />
+export const query = graphql`
+  query {
+    allFile {
+      nodes {
+        name
+      }
+    }
+  }
+`
+
+export const Head = () => <Seo title="Community Search Page"/>
 
 export default SearchPage
