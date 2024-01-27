@@ -6,24 +6,29 @@ import Seo from '/src/components/seo'
 const SearchPage = ({ data }) => {
   return (
     <Layout pageTitle="Community Search Page">
-      <ul>
       {
-        data.allFile.nodes.map(node => (
-          <li key={node.name}>
-            {node.name}
-          </li>
+        data.allMdx.nodes.map((node) => (
+          <article key={node.id}>
+            <h2>{node.frontmatter.title}</h2>
+            <p>Search Date: {node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+          </article>
         ))
       }
-      </ul>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allFile {
+    allMdx(sort: { frontmatter: { date: ASC }}) {
       nodes {
-        name
+        frontmatter {
+          date(formatString: "MMMM D, YYYY")
+          title
+        }
+        id
+        excerpt
       }
     }
   }

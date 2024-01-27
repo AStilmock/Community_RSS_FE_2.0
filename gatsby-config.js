@@ -1,6 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
 module.exports = {
   siteMetadata: {
     title: `Community RSS FE`,
@@ -16,13 +17,6 @@ module.exports = {
         path: `${__dirname}/search_files`,
       }
     },
-    "gastby-plugin-mdx",
-    // "gatsby-transformer-json",
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `./src/data/`,
-    //   },
-    // },
+    "gatsby-plugin-mdx",
   ],
-}
+};
