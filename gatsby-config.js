@@ -1,20 +1,22 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+
 module.exports = {
   siteMetadata: {
-    title: `Community_RSS_FE_2.0`,
+    title: `Community RSS FE`,
     siteUrl: `https://www.yourdomain.tld`,
   },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-    // "gatsby-transformer-json",
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `./src/data/`,
-    //   },
-    // },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `search`,
+        path: `${__dirname}/search_files`,
+      }
+    },
+    "gatsby-plugin-mdx",
   ],
-}
+};
