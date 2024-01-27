@@ -16,6 +16,7 @@ module.exports = {
         path: `${__dirname}/search_files`,
       }
     },
+    "gastby-plugin-mdx",
     // "gatsby-transformer-json",
     // {
     //   resolve: `gatsby-source-filesystem`,
