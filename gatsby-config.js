@@ -18,5 +18,11 @@ module.exports = {
       }
     },
     "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        preset: `gatsby-theme-ui-preset`,
+      },
+    },
   ],
 };
